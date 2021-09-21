@@ -77,7 +77,7 @@
   ;; the corresponding file.
   (let ((byte-compile-directories
          '("generic" "lib"
-           "coq" "easycrypt" "pghaskell" "pgocaml" "pgshell" "phox"
+           "coq" "easycrypt" "pghaskell" "pgocaml" "pgshell" "phox" "acl2s"
            ;; FIXME: These dirs used to not be listed, but I needed to add
            ;; them for the compilation to succeed for me.  --Stef
            ;; These dirs are now obsolete and not published on MELPA.  --Erik
