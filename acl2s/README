@@ -1,0 +1,17 @@
+ACL2s Proof General, for ACL2s.
+
+Written by Jacob Chvatal,
+inspired by ACL2s mode, written by David Aspinall.
+
+Status:	       alpha; unsupported
+Maintainer:    volunteer required
+ACL2 version:  Tested briefly with acl2.5
+ACL2 homepage: http://acl2s.ccs.neu.edu/acl2s/doc/
+
+========================================
+
+This is the absolute bare beginnings of a PG instance for ACL2s.
+At the moment, only basic script management is configured.
+
+
+$Id$
