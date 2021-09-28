@@ -1,10 +1,10 @@
 ##
 ## Makefile for Proof General.
-## 
+##
 ## Author:  David Aspinall <David.Aspinall@ed.ac.uk>
 ##
 ##  make		- do "compile" targets
-##  make compile	- make .elc's 
+##  make compile	- make .elc's
 ##  make check          - compile with warning flags enabled
 ##  make scripts	- edit paths to bash/perl/PGHOME in scripts
 ##  make install	- install into system directories
@@ -16,7 +16,7 @@
 ##     make EMACS=/Applications/Emacs.app/Contents/MacOS/Emacs
 ##
 ## $Id$
-## 
+##
 ###########################################################################
 
 # Set this according to your version of Emacs.
@@ -29,13 +29,13 @@ EMACS=$(shell if [ -z "`which emacs`" ]; then echo "Emacs executable not found";
 # individually before the install section.
 # NB: DEST_PREFIX is used for final destination prefix, in case we're
 # packaging into a build prefix rather than live root (e.g. in rpmbuild).
-# NBB: DESTDIR provides for staged installs, for instance when building 
+# NBB: DESTDIR provides for staged installs, for instance when building
 # Debian packages, see http://www.gnu.org/prep/standards/html_node/DESTDIR.html
 PREFIX=$(DESTDIR)/usr
 DEST_PREFIX=$(DESTDIR)/usr
 
 # subdirectories for provers: to be compiled and installed
-PROVERS=acl2 ccc coq easycrypt hol-light hol98 isar lego pghaskell pgocaml pgshell phox twelf
+PROVERS=acl2 acl2s ccc coq easycrypt hol-light hol98 isar lego pghaskell pgocaml pgshell phox twelf
 
 # generic lisp code: to be compiled and installed
 OTHER_ELISP=generic lib
@@ -59,9 +59,9 @@ EXTRA_DIRS = images
 
 DOC_FILES=AUTHORS BUGS COMPATIBILITY CHANGES COPYING INSTALL README REGISTER doc/*.pdf
 DOC_EXAMPLES=acl2/*.acl2 hol98/*.sml isar/*.thy lclam/*.lcm lego/*.l pgshell/*.pgsh phox/*.phx plastic/*.lf twelf/*.elf
-DOC_SUBDIRS=${DOC_EXAMPLES} */README* */CHANGES */BUGS 
+DOC_SUBDIRS=${DOC_EXAMPLES} */README* */CHANGES */BUGS
 
-BATCHEMACS=${EMACS} --batch --no-site-file -q 
+BATCHEMACS=${EMACS} --batch --no-site-file -q
 
 # Scripts to edit paths to shells
 BASH_SCRIPTS = isar/interface
@@ -85,16 +85,16 @@ default: all
 
 FORCE:
 
-## 
+##
 ## compile : byte compile all lisp files
 ##
 ## Compiling can show up errors in the code, but be wary of fixing obsoletion
 ## or argument call warnings unless they're valid for all supported Emacsen.
 ##
-## The compile target displays errors as warnings only for compatibility 
+## The compile target displays errors as warnings only for compatibility
 ## with newer Emacs versions (see ticket #458).
 ##
-compile: $(EL) 
+compile: $(EL)
 	@echo "****************************************************************"
 	@echo " Byte compiling... "
 	@echo "****************************************************************"
@@ -103,7 +103,7 @@ compile: $(EL)
 	@echo " Finished."
 	@echo "****************************************************************"
 
-## 
+##
 ## check : make sure compilation doesn't emit warnings
 ##
 ## The check target aborts compilation on any byte-compiler warning.
@@ -111,7 +111,7 @@ compile: $(EL)
 ## the repository.
 ## FIXME: Compilation currently emits many warnings :-(
 ##
-check: $(EL) 
+check: $(EL)
 	@echo "****************************************************************"
 	@echo " Byte compiling... "
 	@echo "****************************************************************"
@@ -175,7 +175,7 @@ clean:	cleanscripts
 distclean: clean
 
 ##
-## Install files 
+## Install files
 ##
 DESKTOP_PREFIX=${PREFIX}
 
@@ -224,7 +224,7 @@ install-elisp: install-el install-elc
 # i.e. images.  FIXME: we could put these elsewhere, but
 # then we would need to adjust paths in proof-site.el.
 # FIMXE 3: Michaël Cadilhac pointed out that 'cp -p' when used with
-# sudo to install will give users ownership instead of root. 
+# sudo to install will give users ownership instead of root.
 # Should use install program or fix ownerships afterwards here.
 install-el:
 	mkdir -p ${ELISP}
