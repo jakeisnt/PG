@@ -107,3 +107,4 @@
 Please add improvements at https://github.com/ProofGeneral/PG")
 
 (provide 'acl2s)
+;;; acl2s.el ends here
