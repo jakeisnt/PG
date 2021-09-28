@@ -48,6 +48,7 @@
       (coq "Coq" "v" nil (".vo" ".glob"))
       (easycrypt "EasyCrypt" "ec" "\\.eca?\\'")
       (phox "PhoX" "phx" nil (".phi" ".pho"))
+      (acl2s	"ACL2s" "lisp" nil (".acl2" ".acl2s" ".lisp"))
 
       ;; Obscure instances or conflict with other Emacs modes.
 
@@ -65,7 +66,6 @@
       ;; Incomplete/obsolete:
 
       ;; (hol98	"HOL" "sml")
-      (acl2s	"ACL2s" "acl2s")
       ;; (twelf	"Twelf" "elf")
       ;; (plastic "Plastic" "lf")        ; obsolete
       ;; (lclam "Lambda-CLAM" "lcm")     ; obsolete
